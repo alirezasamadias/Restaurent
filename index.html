@@ -1,12 +1,844 @@
+<!-- START -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Enfold Restaurant</title>
+    <!-- favicon -->
+    <link rel="icon" href="Images/Android-Favicon.png">
+    <!-- font icon -->
+    <link rel="stylesheet" href="Css/Icon.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Css/Main.css">
 </head>
 <body>
-    <h2>heloooooooo</h2>
+    <!-- site loader -->
+    <div class="site-loader">
+        <img src="Images/Website-Logo.png" alt="logo restaurant" title="loading" class="loader-img">
+        <div class="loader"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container">
+            <!-- website logo -->
+            <a href="index.html" target="_blank">
+                <picture>
+                    <source media="(max-width:768px)" srcset="Images/Website-Logo.png" class="website-logo">
+
+                    <img src="Images/Website-Logo-White.png" alt="logo restaurant" title="logo restaurant" class="website-logo">
+                </picture>
+            </a>
+    
+            <!-- menu -->
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#home" class="menu-item-link current">
+                        <span>home</span>
+                        <span class="line-bottom"></span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#about" class="menu-item-link">
+                        <span>about</span>
+                        <span class="line-bottom"></span>
+                    </a>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="#menu" class="menu-item-link">
+                        <span>menu</span>
+                        <span class="line-bottom"></span>
+                    </a>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="#contact" class="menu-item-link">
+                        <span>contact</span>
+                        <span class="line-bottom"></span>
+                    </a>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="#reservations" class="menu-item-link">
+                        <span class="btn btn-secondary">reservations</span>
+                    </a>
+                </li>
+            </ul>
+    
+            <!-- menu hamburger -->
+            <div class="menu-hamburger">
+                <i class="icon-menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main">
+        <!-- home -->
+        <div id="home" class="home part parent-bg-attachment">
+            <!-- bg-cover for debug background slid -->
+            <div class="bg-slide-cover"></div>
+
+            <div class="bg-attachment bg-slide"></div>
+            
+            <section class="container">
+                <h1 class="title">welcome to enfold restaurant</h1>
+
+                <p class="subtitle">The best gourmet restaurant available in Manhattan<br>Book online or call (555)123-&nbsp;4567</p>
+
+                <!-- home btn -->
+                <nav>
+                    <a href="#about" class="btn btn-secondary">about us</a>
+                    <a href="#reservations" class="btn btn-primary">reservations</a>
+                </nav>
+            </section>
+
+            <!-- scroll down -->
+            <a href="#about" class="scroll-down">
+                <i class="icon-down"></i>
+            </a>
+        </div>
+
+        <!-- about -->
+        <div id="about" class="about part">
+            <section class="container">
+                <h2 class="title title_lg">about us</h2>
+
+                <div class="container_spacial">
+                    <!-- article item 01 -->
+                    <article>
+                        <h3 class="title title_md">a few words <span class="text_bold">about&nbsp;us</span></h3>
+                        <p class="subtitle">Let us introduce ourselves</p>
+        
+                        <div class="article-content">
+                            <p>Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulia Curae; Fusce id purus. <span class="highlight">Ut varius tincidunt</span> libero. Phasellus dolor. Maecenas vestibulum mollis</p>
+        
+                            <p>Lorem ipsum dolor sit amet, <span class="highlight"> consectetur</span> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+                        </div>
+                    </article>
+        
+                    <!-- article item 02 -->
+                    <article>
+                        <h3 class="title title_md">a place to wine, a place <span class="text_bold">to&nbsp;dine</span></h3>
+                        <p class="subtitle">How it all came to be…</p>
+        
+                        <div class="article-content">
+                            <p>Lorem ipsum dolor sit amet, <span class="highlight">consectetur</span> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+        
+                            <p class="text-spacial">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        
+                            <p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        </div>
+                    </article>    
+                </div>
+
+                <!-- about gallery -->
+                <div class="gallery">
+                    <div class="parent-img tooltip" title="coffee" data-tooltip="With Yauco Selector beans. Some say the most exclusive beans in the world.">
+                        <img src="Images/Coffee-Medium.jpg" alt="coffee" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="wine" data-tooltip="Select from over 400 Wines">
+                        <img src="Images/Wine-Small.jpg" alt="wine" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="soup narrow" data-tooltip="Best ingredients for our best soup">
+                        <img src="Images/Soup-Narrow-Medium.jpg" alt="soup narrow" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="burger" data-tooltip="Our award winning Cheeseburger">
+                        <img src="Images/Burger-Medium.jpg" alt="burger" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="cheese" data-tooltip="with basil leaves and cherry tomatoes">
+                        <img src="Images/Cheese-Medium.jpg" alt="cheese" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="fruit" data-tooltip="Pastries with fruits">
+                        <img src="Images/Fruit-Medium.jpg" alt="fruit" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="pasta" data-tooltip="Classic Pasta as you would expect it with the best ingredients">
+                        <img src="Images/Pasta-Medium.jpg" alt="pasta" class="gallery-img show-element_scale">
+                    </div>
+                    
+                    <div class="parent-img tooltip" title="pizza" data-tooltip="You are vegetarian? No problem. We got dozens of dishes for you">
+                        <img src="Images/Pizza-Medium.jpg" alt="pizza" class="gallery-img show-element_scale">
+                    </div>
+
+                    <div class="parent-img tooltip" title="restaurant hotel brown" data-tooltip="Our 20 people Dinning Room for rent">
+                        <img src="Images/Restaurant-Hotel-Brown-Medium.jpg" alt="restaurant hotel brown" class="gallery-img show-element_scale">
+                    </div>
+
+                    <!-- modal -->
+                    <div class="modal">
+                        <button class="modal-btn modal-btn_close">
+                            <i class="icon-close"></i>
+                        </button>
+
+                        <button class="modal-btn modal-btn_perv">
+                            <i class="icon-left"></i>
+                        </button>
+
+                        <button class="modal-btn modal-btn_next">
+                            <i class="icon-right"></i>
+                        </button>
+                        
+                        <figure class="modal-content">
+                            <img class="modal-img" src="" alt="">
+
+                            <figcaption class="img-info">
+                                <div id="img-name"></div>
+                                <div id="img-num"></div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- menu restaurant -->
+        <div id="menu" class="menu-restaurant part">
+            <section class="parent-bg-attachment">
+                <div class="bg-attachment"></div>
+                <h2 class="title title_lg top-title">our menu</h2>
+            </section>
+
+            <div class="container">
+                <!-- menu of the day -->
+                <section class="menu-part menu-day">
+                    <h3 class="title title_md"><span class="text_bold">menu</span> of the day</h3>
+
+                    <div>
+                        <ul class="list">
+                            <!-- item 01 -->
+                            <li class="list-item">
+                                <a href="Images/Pizza-Large.jpg">
+                                    <figure class="list-item-figure">
+                                        <img src="Images/Pizza-Small.jpg" alt="pizza" title="pizza" class="list-item-img show-element_scale">
+    
+                                        <figcaption class="list-item-figcaption">
+                                            <div>
+                                                <h4 class="title title_sm">sesame crusted scotch fillet</h4>
+                                                <p class="subtitle">with honeyed pedro ximenes sauce and potato cake</p>
+                                            </div>
+                                            <div class="price">7.50$</div>
+                                        </figcaption>    
+                                    </figure>
+                                </a>
+                            </li>
+                            
+                            <!-- item 02 -->
+                            <li class="list-item">
+                                <a href="Images/Burger-Large.jpg">
+                                    <figure class="list-item-figure">
+                                        <img src="Images/Burger-Small.jpg" alt="burger" title="burger" class="list-item-img show-element_scale">
+                                            
+                                        <figcaption class="list-item-figcaption">
+                                            <div>
+                                                <h4 class="title title_sm">poast rack of lamb</h4>
+                                                <p class="subtitle">with herb crust and fruity mesclun salad and straw potato</p>
+                                            </div>
+                                            <div class="price">7.50$</div>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- break fast -->
+                <section class="menu-part">
+                    <h3 class="title title_md">break<span class="text_bold">fast</span></h3>
+
+                    <div class="container_spacial">
+                        <ul class="list">
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">eggs benedict</h4>
+                                    <p class="subtitle">with either bacon or salmon</p>
+                                </div>
+                                <div class="price">21$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">enfold’s famous crepes</h4>
+                                    <p class="subtitle">with fresh fruit, bacon and maple syrup</p>
+                                </div>
+                                <div class="price">16$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">french toasted brioche</h4>
+                                    <p class="subtitle">with grilled banana, bacon, rosewater mascarpone and maple syrup</p>
+                                </div>
+                                <div class="price">17$</div>
+                            </li>
+                        </ul>
+    
+                        <ul class="list">
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">low carb breakfast</h4>
+                                    <p class="subtitle">grilled chicken breast with veggies</p>
+                                </div>
+                                <div class="price">13$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">bagle</h4>
+                                    <p class="subtitle">with salmon, cream cheese and salsa</p>
+                                </div>
+                                <div class="price">8.50$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">american pancakes</h4>
+                                    <p class="subtitle">with chocolate  sauce or maple syrup, honey and cream</p>
+                                </div>
+                                <div class="price">21$</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- lunch time -->
+                <section class="menu-part">
+                    <h3 class="title title_md">lunch<span class="text_bold">time</span></h3>
+
+                    <div class="container_spacial">
+                        <ul class="list">
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">spiced pigeon</h4>
+                                    <p class="subtitle">Ale & artichokes</p>
+                                </div>
+                                <div class="price">38$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">ribeye steak</h4>
+                                    <p class="subtitle">Mushroom ketchup & fries</p>
+                                </div>
+                                <div class="price">42$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">duck breast</h4>
+                                    <p class="subtitle">Smoked confit fennel & umbles</p>
+                                </div>
+                                <div class="price">35$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">roast turbot</h4>
+                                    <p class="subtitle">Mussel & seaweed ketchup, salmon roe & sea rosemary</p>
+                                </div>
+                                <div class="price">22$</div>
+                            </li>
+                        </ul>
+    
+                        <ul class="list">
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">linefish</h4>
+                                    <p class="subtitle">Pan fried line fish, herded nicola potato and mussel salad</p>
+                                </div>
+                                <div class="price">27$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">autumn lamb</h4>
+                                    <p class="subtitle">Pan seared lamb loin, slow roasted lamb shanks</p>
+                                </div>
+                                <div class="price">33$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">duck</h4>
+                                    <p class="subtitle">Confit duck leg, mushroom and liver stuffing and onions</p>
+                                </div>
+                                <div class="price">75$</div>
+                            </li>
+    
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">homedried tomato</h4>
+                                    <p class="subtitle">with sesame, aubergine puree and burnt aubergine jelly</p>
+                                </div>
+                                <div class="price">22$</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- wine selection -->
+                <section class="menu-part">
+                    <h3 class="title title_md">wine <span class="text_bold">selection</span></h3>
+
+                    <div class="container_spacial">
+                        <img src="Images/Wine-Medium.jpg" alt="wine" title="wine" class="menu-img show-element_scale">
+
+                        <ul class="list">
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">grechetto, poggio della costa</h4>
+                                    <p class="subtitle">2011, Umbria, Italy (B) 13|49</p>
+                                </div>
+                                <div class="price">23$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">muskutel;er, heidi schrock</h4>
+                                    <p class="subtitle">2010, Neusiedlersee-Huggeland, Austria (B) 52</p>
+                                </div>
+                                <div class="price">45$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">posip, zlatan otok winery</h4>
+                                    <p class="subtitle">2012, Island of Hvar, Croatia (B) 53</p>
+                                </div>
+                                <div class="price">12$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">chenin blanc, nicolas joly</h4>
+                                    <p class="subtitle">2010, Loire, France (B) 65</p>
+                                </div>
+                                <div class="price">33$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">petite chablis, f. bachelier</h4>
+                                    <p class="subtitle">2011, Chablis, France (O) 44</p>
+                                </div>
+                                <div class="price">32.90$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">prosecco, jeio</h4>
+                                    <p class="subtitle">NV, Italy (O) 11|37</p>
+                                </div>
+                                <div class="price">22$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <div>
+                                    <h4 class="title title_sm">cava brut, campasso</h4>
+                                    <p class="subtitle">NV, Spain (O) 11|41</p>
+                                </div>
+                                <div class="price">33$</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- non alcoholtic beverages -->
+                <section class="menu-part">
+                    <h3 class="title title_md">non alcoholtic <span class="text_bold">beverages</span></h3>
+
+                    <div class="container_spacial">
+                        <ul class="list">
+                            <li class="list-item">
+                                <h4 class="title title_sm">7up</h4>
+                                <div class="price">3.90$</div>
+                            </li>
+
+                            <li class="list-item">
+                                <h4 class="title title_sm">root beer</h4>
+                                <div class="price">3.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">apple juice</h4>
+                                <div class="price">3.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">orange juice</h4>
+                                <div class="price">3.90$</div>
+                            </li>
+                        </ul>
+    
+                        <ul class="list">
+                            <li class="list-item">
+                                <h4 class="title title_sm">coke</h4>
+                                <div class="price">3.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">pepsi</h4>
+                                <div class="price">2.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">red bull</h4>
+                                <div class="price">4.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">bitter lemon</h4>
+                                <div class="price">2.95$</div>
+                            </li>
+                        </ul>
+    
+                        <ul class="list">
+                            <li class="list-item">
+                                <h4 class="title title_sm">crush</h4>
+                                <div class="price">2.70$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">crystal light</h4>
+                                <div class="price">5.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">banana shake</h4>
+                                <div class="price">5.90$</div>
+                            </li>
+                            
+                            <li class="list-item">
+                                <h4 class="title title_sm">pineapple shake</h4>
+                                <div class="price">7.95$</div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- contact -->
+        <div id="contact" class="contact part">
+            <section class="parent-bg-attachment">
+                <div class="bg-attachment"></div>
+                <h2 class="title title_lg top-title">contact us</h2>
+            </section>
+
+            <!-- contact cards -->
+            <div class="container">
+                <div class="parent-cards">
+                    <section class="card">
+                        <h3 class="card-title"><i class="icon-star"></i>enfold seattle</h3>
+                        <p class="card-content">4326 University Way NE<br>Seattle, WA, United States</p>
+                        <p class="card-content">&phone; (555) 345 888<br><a href="http://seattle@enfold-restaurant.com/" target="_blank" class="card-link">seattle@enfold-restaurant.com</a></p>
+                    </section>
+    
+                    <section class="card">
+                        <h3 class="card-title"><i class="icon-star"></i>enfold dallas</h3>
+                        <p class="card-content">11311 Harry Hines Blvd<br>Dallas, TX, United States</p>
+                        <p class="card-content">&phone; (555) 389 976<br><a href="http://dallas@enfold-restaurant.com/" target="_blank" class="card-link">dallas@enfold-restaurant.com</a></p>
+                    </section>
+    
+                    <section class="card">
+                        <h3 class="card-title"><i class="icon-star"></i>enfold detroit</h3>
+                        <p class="card-content">4870 Cass Ave<br>Detroit, MI, United States</p>
+                        <p class="card-content">&phone; (555) 389 976<br><a href="http://detroit@enfold-restaurant.com/" target="_blank" class="card-link">detroit@enfold-restaurant.com</a></p>
+                    </section>
+    
+                    <section class="card">
+                        <h3 class="card-title"><i class="icon-star"></i>enfold L.A.</h3>
+                        <p class="card-content">1818 N Vermont Ave<br>Los Angeles, CA, United States</p>
+                        <p class="card-content">&phone; (555) 774 433<br><a href="http://LA@enfold-restaurant.com/" target="_blank" class="card-link">LA@enfold-restaurant.com</a></p>
+                    </section>
+                </div>
+
+                <!-- contact location -->
+                <fieldset class="location">
+                    <legend>Locations</legend>
+                    <div class="parent-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11788.509602327886!2d-83.13881887736748!3d42.38243241489823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1681799289743!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map"></iframe>
+
+                        <div class="static-map">
+                            <!-- map images -->
+                            <img src="Images/Static-Map-01.png" alt="static map" class="map-img">
+                            <img src="Images/Static-Map-03.png" alt="static map" class="map-img">
+                            <img src="Images/Static-Map-05.png" alt="static map" class="map-img">
+                            <img src="Images/Static-Map-02.png" alt="static map" class="map-img">
+                            <img src="Images/Static-Map-04.png" alt="static map" class="map-img">
+                            <img src="Images/Static-Map-06.png" alt="static map" class="map-img">
+
+                            <!-- spotlights -->
+                            <img src="Images/Spotlight.png" alt="spotlight" class="spotlight spotlight-01 show-element_position">
+                            <img src="Images/Spotlight.png" alt="spotlight" class="spotlight spotlight-02 show-element_position">
+                            <img src="Images/Spotlight.png" alt="spotlight" class="spotlight spotlight-03 show-element_position">
+                            <img src="Images/Spotlight.png" alt="spotlight" class="spotlight spotlight-04 show-element_position">
+                        </div>
+
+                        <div class="map-loader">
+                            <div class="loader"></div>
+                        </div>
+
+                        <button class="map-btn"><i class="icon-close"></i></button>
+                    </div>
+                </fieldset>
+
+                <!-- contact form -->
+                <fieldset>
+                    <legend>Get in touch</legend>
+
+                    <form action="none" method="post">
+                        <div class="form-group input_text">
+                            <label for="name">name</label>&nbsp;<abbr title="required">*</abbr>
+                            <input type="text" id="name" class="form-item" required autocomplete="off">
+                        </div>
+    
+                        <div class="form-group input_email">
+                            <label for="email">e-male</label>&nbsp;<abbr title="required">*</abbr>
+                            <input type="email" id="email" class="form-item" required autocomplete="off">
+                        </div>
+    
+                        <div class="form-group textarea">
+                            <label for="massage">massage</label>&nbsp;<abbr title="required">*</abbr>
+                            <textarea id="massage" cols="60" rows="10" class="form-item" required></textarea>
+                        </div>
+    
+                        <input type="submit" value="send" class="btn input_submit">
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- reservations -->
+        <div id="reservations" class="reservations part">
+            <section class="parent-bg-attachment">
+                <div class="bg-attachment"></div>
+                <h2 class="title title_lg top-title">reservations</h2>
+            </section>
+
+            <div class="container container_spacial">
+                <div>
+                    <article>
+                        <h3 class="title title_md">select a table<span class="highlight"> & </span><span class="text_bold">book&nbsp;now</span></h3>
+                        <p class="subtitle">We will confirm your order via E-Mail</p>
+    
+                        <div class="article-content">
+                            <p>Lorem ipsum dolor sit amet, <span class="highlight">consectetur</span> adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+                        </div>
+                    </article>
+
+                    <!-- reservations form -->
+                    <form action="none" method="post">
+                        <div class="form-group input_text">
+                            <label for="name-2">name <abbr class="highlight" title="required">*</abbr></label>
+                            <input type="text" id="name-2" class="form-item" required autocomplete="off">
+                        </div>
+    
+                        <div class="form-group input_email">
+                            <label for="email-2">e-male <abbr class="highlight" title="required">*</abbr></label>
+                            <input type="email" id="email-2" class="form-item" required autocomplete="off">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="date">date <abbr class="highlight" title="required">*</abbr></label>
+                            <input type="date" id="date" class="form-item" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">time <abbr class="highlight" title="required">*</abbr></label>
+                            <select id="time" class="form-item">
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="seats">seats <abbr class="highlight" title="required">*</abbr></label>
+                            <select id="seats" class="form-item">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="table">table <abbr class="highlight" title="required">*</abbr></label>
+                            <select id="table" class="form-item">
+                                <option value="any">any</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="book now" class="input_submit btn btn-primary">
+                        </div>
+                    </form>
+    
+                    <article>
+                        <h3 class="title title_md">order by <span class="text_bold">phone</span></h3>
+    
+                        <div class="article-content">
+                            <p>Prefer to make your reservation via phone? <span class="highlight"> Give us a call!</span> You can contact us between 10am and 22pm ever day of the week. Our Phone number is <span class="highlight">(555) 784 332</span></p>
+                        </div>
+    
+                        <dl>
+                            <dt class="highlight">Opening hours:</dt>
+                            <dd><p>Mon – Fri, 10am – 12pm</p></dd>
+                            <dd><p>Sat – Sun, 11am – 04am</p></dd>
+                        </dl>
+                    </article>    
+                </div>
+
+                <div class="plan">
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 8 persons" data-table="1">
+                        <span class="hotspot-text">1</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 8 persons" data-table="2">
+                        <span class="hotspot-text">2</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 8 persons" data-table="3">
+                        <span class="hotspot-text">3</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 8 persons" data-table="4">
+                        <span class="hotspot-text">4</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 4 persons" data-table="5">
+                        <span class="hotspot-text">5</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 4 persons" data-table="6">
+                        <span class="hotspot-text">6</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 4 persons" data-table="7">
+                        <span class="hotspot-text">7</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+
+                    <div class="hotspot tooltip show-element_position" data-tooltip="For up to 4 persons" data-table="8">
+                        <span class="hotspot-text">8</span>
+                        <span class="hotspot-loop"></span>
+                    </div>
+                    
+                    <img src="Images/Floor-Plan.png" alt="floor" class="plan-img">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <!-- footer cards -->
+        <div class="container">
+            <div class="parent-cards">
+                <section class="card">
+                    <h3 class="card-title">enfold seattle</h3>
+                    <p class="card-content">4326 University Way NE<br>Seattle, WA, United States</p>
+                    <p class="card-content">&phone; (555) 345 888<br><a href="http://seattle@enfold-restaurant.com/" target="_blank" class="card-link">seattle@enfold-restaurant.com</a></p>
+                </section>
+    
+                <section class="card">
+                    <h3 class="card-title">enfold dallas</h3>
+                    <p class="card-content">11311 Harry Hines Blvd<br>Dallas, TX, United States</p>
+                    <p class="card-content">&phone; (555) 389 976<br><a href="http://dallas@enfold-restaurant.com/" target="_blank" class="card-link">dallas@enfold-restaurant.com</a></p>
+                </section>
+    
+                <section class="card">
+                    <h3 class="card-title">enfold detroit</h3>
+                    <p class="card-content">4870 Cass Ave<br>Detroit, MI, United States</p>
+                    <p class="card-content">&phone; (555) 389 976<br><a href="http://dallas@enfold-restaurant.com/" target="_blank" class="card-link">dallas@enfold-restaurant.com</a></p>
+                </section>
+    
+                <section class="card">
+                    <h3 class="card-title">enfold L.A.</h3>
+                    <p class="card-content">1818 N Vermont Ave<br>Los Angeles, CA, United States</p>
+                    <p class="card-content">&phone; (555) 774 433<br><a href="http://LA@enfold-restaurant.com/" target="_blank" class="card-link">LA@enfold-restaurant.com</a></p>
+                </section>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <nav class="container">
+                <p class="footer-nav-content">&copy; Copyright - <a href="https://kriesi.at/themes/enfoled-one-page-portfolio/" target="_blank" class="footer-nav-link">Enfold&nbsp;Restaurant&nbsp;One&nbsp;Page&nbsp;Demo</a> - <a href="https://kriesi.at/" target="_blank" class="footer-nav-link">Enfold&nbsp;Theme&nbsp;by&nbsp;Kriesi</a></p>
+
+                <a href="https://kriesi.at/Privacy-Policy/" target="_blank" class="footer-nav-link">Privacy&nbsp;Policy</a>
+
+                <!-- social media -->
+                <div class="social-media">
+                    <a href="https://m.facebook.com/" target="_blank" class="tooltip" data-tooltip="facebook">
+                        <i class="social-media-icon icon-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/" class="tooltip" data-tooltip="instagram">
+                        <i class="social-media-icon icon-instagram"></i>
+                    </a>
+                    
+                    <a href="https://api.whatsapp.com/" class="tooltip" data-tooltip="whatsapp">
+                        <i class="social-media-icon icon-whatsapp"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- scroll up page -->
+    <a href="#" class="scroll-up-page">
+        <i class="icon-up"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="Js/Main.js"></script>
 </body>
 </html>
+<!-- THE END -->
