@@ -44,7 +44,7 @@ const scrollUpEl = document.querySelector('.scroll-up-page');
 
 // site loader
 document.onreadystatechange = () => {
-    if (document.readyState == "complete") {
+    if (document.readyState === "complete") {
         // home background
         const backgrounds = ['Burger-Large.jpg','Coffee-Large.jpg','Fruit-Large.jpg','Pasta-Large.jpg'];
         let num = 0;
@@ -55,7 +55,7 @@ document.onreadystatechange = () => {
                 num = 0;
             }
 
-            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) , url(Images/${backgrounds[num - 1]})`;
+            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) , url(Images/${backgrounds[num]})`;
         },5000);
 
         siteLoaderEl.style.opacity = "0";
