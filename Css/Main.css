@@ -594,6 +594,7 @@ label {
 }
 
 .home .bg-slide {
+    background-image: url(../Images/Burger-Large.jpg);
     transition: background-image 2s;
 }
 
