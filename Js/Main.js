@@ -1,6 +1,4 @@
-// START
 // site loader
-const bodyEl = document.querySelector('body');
 const siteLoaderEl = document.querySelector('.site-loader');
 const homeContent = document.querySelector('.home .container');
 // header slider
@@ -15,21 +13,20 @@ const menuEl = document.querySelector('.menu');
 const menuHamburgerIcon = document.querySelector('.icon-menu');
 // home background
 const bgSlide = document.querySelector('.bg-slide');
-const bgSlideCover = document.querySelector('.bg-slide-cover');
 // background attachment custom
 const bgAttachments = document.querySelectorAll('.bg-attachment');
 // show element
-const showElementsScale = document.querySelectorAll('.show-element_scale');
-const showElementsPosition = document.querySelectorAll('.show-element_position');
+const showElementsScale = document.querySelectorAll('.show-scale');
+const showElementsPosition = document.querySelectorAll('.show-position');
 // show element delay
 const galleryImgs = document.querySelectorAll('.gallery-img');
 // modal
 const modalEl = document.querySelector('.modal');
 const modalChilds = document.querySelectorAll('.modal > :nth-child(n)');
 const modalImgEl = document.querySelector('.modal-img');
-const modalBtnClose = document.querySelector('.modal-btn_close');
-const modalBtnPerv = document.querySelector('.modal-btn_perv');
-const modalBtnNext = document.querySelector('.modal-btn_next');
+const modalBtnClose = document.querySelector('.modal-btn-close');
+const modalBtnPerv = document.querySelector('.modal-btn-perv');
+const modalBtnNext = document.querySelector('.modal-btn-next');
 const imgName = document.getElementById('img-name');
 const imgNum = document.getElementById('img-num');
 // form
@@ -46,58 +43,67 @@ const mapLoader = document.querySelector('.map-loader');
 const scrollUpEl = document.querySelector('.scroll-up-page');
 
 // site loader
-document.onreadystatechange = ()=>{
-    if (document.readyState !== "complete") {
-        bodyEl.style.visibility = "hidden";
-        siteLoaderEl.style.visibility = "visible";
-        homeContent.style.display = 'none';
-    } else {
+document.onreadystatechange = () => {
+    if (document.readyState == "complete") {
         siteLoaderEl.style.opacity = "0";
         siteLoaderEl.style.visibility = "hidden";
-        bodyEl.style.visibility = "visible";
         homeContent.style.display = 'flex';
+
+        // home background
+        const backgrounds = ['Burger-Large.jpg','Coffee-Large.jpg','Fruit-Large.jpg','Pasta-Large.jpg'];
+        let num = 0;
+        bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]})`;
+        setInterval(() => {
+            num++;
+            if (num > backgrounds.length - 1) {
+                num = 0;
+            }
+
+            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) `;
+        },5000);
     }
 };
 
-// header slider
-window.addEventListener('scroll',()=>{
-    // change slider
-    if (window.scrollY - headerEl.offsetHeight >= 0){
-        headerEl.classList.add('header-light');
-        websiteLogoEl.setAttribute('src','Images/Website-Logo.png');
-    } else {
-        headerEl.classList.remove('header-light');
-        websiteLogoEl.setAttribute('src','Images/Website-Logo-White.png');
-    }
+// header set min-width:768
+const headerFix = () => {
+    window.addEventListener('scroll',() => {
+        // debug headerSlide
+        headerEl.style.top = '0';
 
-    // menu item target
-    for (const part of parts) {
-        if (part.getBoundingClientRect().top - headerEl.offsetHeight <= 0){
-            for (const menuItemLink of menuItemsLink) {
-                if (menuItemLink.getAttribute('href').includes(part.id)){
-                    menuItemLink.classList.add('current');
-                } else {
-                    menuItemLink.classList.remove('current');
+        // menu item target
+        for (const part of parts) {
+            if (part.getBoundingClientRect().top - headerEl.offsetHeight <= 0) {
+                for (const menuItemLink of menuItemsLink) {
+                    if (menuItemLink.getAttribute('href').includes(part.id)) {
+                        menuItemLink.classList.add('current');
+                    } else {
+                        menuItemLink.classList.remove('current');
+                    }
                 }
             }
         }
-    }
-});
-// header set min-width:768
-const headerFix = ()=>{
-    window.addEventListener('scroll',()=>{
-        headerEl.style.top = '0';
+        // change slider
+        if (window.scrollY - headerEl.offsetHeight >= 0) {
+            headerEl.classList.add('header-secondary');
+            websiteLogoEl.setAttribute('src','Images/Website-Logo.png');
+        } else {
+            headerEl.classList.remove('header-secondary');
+            websiteLogoEl.setAttribute('src','Images/Website-Logo-White.png');
+        }
     });
 };
 // header set max-width:768
-const headerSlide = ()=>{
+const headerSlide = () => {
     let primaryScroll = window.scrollY;
+    
+    window.addEventListener('scroll',() => {
+        // debug headerFix
+        headerEl.classList.remove('header-secondary');
 
-    window.addEventListener('scroll',()=>{
         const scrollNow = window.scrollY;
     
-        if (scrollNow >= homeEl.offsetHeight - headerEl.offsetHeight){
-            if (scrollNow >= primaryScroll){
+        if (scrollNow >= homeEl.offsetHeight - headerEl.offsetHeight) {
+            if (scrollNow >= primaryScroll) {
                 headerEl.style.top = `-${headerEl.offsetHeight}px`;
             } else {
                 headerEl.style.top = '0';
@@ -107,30 +113,30 @@ const headerSlide = ()=>{
         }
 
         // debug
-        if (menuEl.classList.contains('show-menu')){
+        if (menuEl.classList.contains('show-menu')) {
             headerEl.style.top = '0';
         }
     });
 };
 // by responsive
-if (window.innerWidth > 768){
+if (window.innerWidth > 768) {
     headerFix();
-} else if (window.innerWidth <= 768){
+} else if (window.innerWidth <= 768) {
     headerSlide();
 }
 // by resize
-window.addEventListener('resize',()=>{
-    if (window.innerWidth > 768){
+window.addEventListener('resize',() => {
+    if (window.innerWidth > 768) {
         headerFix();
     }
-    if (window.innerWidth <= 768){
+    if (window.innerWidth <= 768) {
         headerSlide();
     }
 });
 
 // show menu
 const showMenu = element => {
-    element.addEventListener('click',()=>{
+    element.addEventListener('click',() => {
         menuEl.classList.toggle('show-menu');
         // change menu hamburger icon
         menuHamburgerIcon.classList.toggle('icon-close');
@@ -139,26 +145,12 @@ const showMenu = element => {
 showMenu(menuHamburgerEl);
 showMenu(menuEl);
 
-// home background
-const backgrounds = ['Burger-Large.jpg','Coffee-Large.jpg','Fruit-Large.jpg','Pasta-Large.jpg'];
-let num = 0;
-setInterval(()=>{
-    num++;
-
-    if (num === backgrounds.length){
-        num = 0;
-    }
-
-    bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]})`;
-    bgSlideCover.style.backgroundImage = `url(Images/${backgrounds[num]})`;
-},5000);
-
 // background attachment custom
-window.addEventListener('scroll',()=>{
+window.addEventListener('scroll',() => {
     let num = 0;
     
     for (const bgAttachment of bgAttachments) {
-        if (bgAttachment.parentElement.getBoundingClientRect().top <= window.innerHeight && bgAttachment.parentElement.getBoundingClientRect().bottom >= 0 ){
+        if (bgAttachment.parentElement.getBoundingClientRect().top <= window.innerHeight && bgAttachment.parentElement.getBoundingClientRect().bottom >= 0 ) {
             let numScroll = Math.round(window.scrollY) - bgAttachment.parentElement.offsetTop - bgAttachment.parentElement.getBoundingClientRect().top;
             num = numScroll / 10;
         }
@@ -171,15 +163,15 @@ window.addEventListener('scroll',()=>{
 const show = (element,className)=>{
     for (const showElement of element) {
         showElement.classList.add(className);
-        window.addEventListener('scroll',()=>{
-            if (showElement.parentElement.getBoundingClientRect().top <= window.innerHeight){
+        window.addEventListener('scroll',() => {
+            if (showElement.parentElement.getBoundingClientRect().top <= window.innerHeight) {
                 showElement.style.display = 'initial';
             }
         });
     }
 };
-show(showElementsScale,'show_scale');
-show(showElementsPosition,'show_position');
+show(showElementsScale,'show-scale');
+show(showElementsPosition,'show-position');
 
 // show element delay
 for (let num = 0; num < galleryImgs.length;) {
@@ -196,7 +188,7 @@ galleryImgs.forEach((galleryImg,index)=>{
     const showImg = (target , interval)=>{
         modalImgEl.style.opacity = '0';
         imgName.style.opacity = '0';
-        setTimeout(()=>{
+        setTimeout(() => {
             modalImgEl.setAttribute('src',target.getAttribute('src'));
             modalImgEl.setAttribute('alt',target.getAttribute('alt'));
 
@@ -209,9 +201,9 @@ galleryImgs.forEach((galleryImg,index)=>{
     };
 
     // perv img
-    const pervImg = ()=>{
+    const pervImg = () => {
         index--;
-        if (index < 0){
+        if (index < 0) {
             index = galleryImgs.length - 1;
         }
 
@@ -219,48 +211,48 @@ galleryImgs.forEach((galleryImg,index)=>{
     };
 
     // next img
-    const nextImg = ()=>{
+    const nextImg = () => {
         index++;
-        if (index >= galleryImgs.length){
+        if (index >= galleryImgs.length) {
             index = 0;
         }
 
         showImg(galleryImgs[index],300);
     };
 
-    galleryImg.addEventListener('click',()=>{
+    galleryImg.addEventListener('click',() => {
         // show modal
         modalEl.classList.add('show-modal');
         showImg(galleryImg,0);
         
         // chang img
-        modalBtnPerv.addEventListener('click',()=>{
+        modalBtnPerv.addEventListener('click',() => {
             pervImg();
         });
-        modalBtnNext.addEventListener('click',()=>{
+        modalBtnNext.addEventListener('click',() => {
             nextImg();
         });
 
         // keyboard
         window.addEventListener('keyup',(e)=>{
-            e.keyCode === 27 ? hideModal() : false;
-            e.keyCode === 39 ? nextImg() : false;
-            e.keyCode === 37 ? pervImg() : false;
+            e.key === 'Escape' ? hideModal() : false;
+            e.key === 'ArrowRight' ? nextImg() : false;
+            e.key === 'ArrowLeft' ? pervImg() : false;
         });
     });
 });
 // hide modal
-const hideModal = ()=>{
+const hideModal = () => {
     modalEl.classList.remove('show-modal');
     modalBtnClose.style.transform = 'rotate(180deg)';
     setTimeout(() => {
         modalBtnClose.style.transform = 'rotate(0deg)';
     },400);
 };
-modalEl.addEventListener('click',()=>{
+modalEl.addEventListener('click',() => {
     hideModal();
 });
-modalBtnClose.addEventListener('click',()=>{
+modalBtnClose.addEventListener('click',() => {
     hideModal();
 });
 // debug stop hide modal
@@ -285,18 +277,19 @@ month < 10 ? month = '0' + month : false;
 inputDateEl.value = `${year}-${month}-${day}`;
 // table value dynamic
 for (const hotspotEl of hotspots) {
-    hotspotEl.addEventListener('click',()=>{
+    hotspotEl.addEventListener('click',() => {
         tableEl.value = hotspotEl.dataset.table;
     });
 }
 
 // map
-staticMap.addEventListener('click',()=>{
-    googleMap.style.display = 'block';
-    mapBtn.style.display = 'block';
+staticMap.addEventListener('click',() => {
     mapLoader.style.display = 'flex';
+    googleMap.style.display = 'block';
+    googleMap.setAttribute('src','https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11788.509602327886!2d-83.13881887736748!3d42.38243241489823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1681799289743!5m2!1sen!2sus');
+    mapBtn.style.display = 'block';
 });
-mapBtn.addEventListener('click',()=>{
+mapBtn.addEventListener('click',() => {
     googleMap.style.display = 'none';
     mapBtn.style.display = 'none';
     mapLoader.style.display = 'none';
@@ -304,8 +297,8 @@ mapBtn.addEventListener('click',()=>{
 
 // scroll up page show
 scrollUpEl.style.display = 'none';
-window.addEventListener('scroll',()=>{
-    if (homeEl.getBoundingClientRect().bottom - headerEl.offsetHeight >= 0){
+window.addEventListener('scroll',() => {
+    if (homeEl.getBoundingClientRect().bottom - headerEl.offsetHeight >= 0) {
         scrollUpEl.style.display = 'block';
         scrollUpEl.classList.add('scroll-up-hide');
     } else {
@@ -313,4 +306,3 @@ window.addEventListener('scroll',()=>{
         scrollUpEl.classList.remove('scroll-up-hide');
     }
 });
-// THE END
