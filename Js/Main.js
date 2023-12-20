@@ -52,14 +52,14 @@ document.onreadystatechange = () => {
         // home background
         const backgrounds = ['Burger-Large.jpg','Coffee-Large.jpg','Fruit-Large.jpg','Pasta-Large.jpg'];
         let num = 0;
-        bgSlide.style.backgroundImage = `url(../Images/${backgrounds[num]})`;
+        bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]})`;
         setInterval(() => {
             num++;
             if (num > backgrounds.length - 1) {
                 num = 0;
             }
 
-            bgSlide.style.backgroundImage = `url(../Images/${backgrounds[num]}) `;
+            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) `;
         },5000);
     }
 };
