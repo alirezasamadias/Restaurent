@@ -57,7 +57,7 @@ document.onreadystatechange = () => {
                 num = 0;
             }
 
-            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) , url(Images/${backgrounds[num + 1]})`;
+            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) , url(Images/${backgrounds[num < backgrounds.length - 1 ? num + 1 : num]})`;
         },5000);
 
         siteLoaderEl.style.opacity = "0";
