@@ -45,10 +45,6 @@ const scrollUpEl = document.querySelector('.scroll-up-page');
 // site loader
 document.onreadystatechange = () => {
     if (document.readyState == "complete") {
-        siteLoaderEl.style.opacity = "0";
-        siteLoaderEl.style.visibility = "hidden";
-        homeContent.style.display = 'flex';
-
         // home background
         const backgrounds = ['Burger-Large.jpg','Coffee-Large.jpg','Fruit-Large.jpg','Pasta-Large.jpg'];
         let num = 0;
@@ -59,8 +55,12 @@ document.onreadystatechange = () => {
                 num = 0;
             }
 
-            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) `;
+            bgSlide.style.backgroundImage = `url(Images/${backgrounds[num]}) , url(Images/${backgrounds[num - 1]})`;
         },5000);
+
+        siteLoaderEl.style.opacity = "0";
+        siteLoaderEl.style.visibility = "hidden";
+        homeContent.style.display = 'flex';
     }
 };
 
