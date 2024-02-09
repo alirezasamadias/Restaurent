@@ -1,6 +1,6 @@
 # Restaurant
 
-![alt text](Images/Screen-Project.png)
+![Screen Project](Images/Screen-Project.png)
 
 ## Url
 https://restaurant-8vf5.onrender.com
